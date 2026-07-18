@@ -1,0 +1,25 @@
+{
+  "name": "@vdaluz/astro-og-cards",
+  "version": "0.1.0",
+  "description": "Shared OG/social-card meta tags and build-time card generation (satori + sharp) for @vdaluz/*-family Astro sites.",
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./OgMeta.astro": "./src/components/OgMeta.astro"
+  },
+  "peerDependencies": {
+    "astro": ">=6.0.0"
+  },
+  "dependencies": {
+    "satori": "^0.28.0",
+    "satori-html": "^0.3.2",
+    "sharp": "^0.35.0"
+  }
+}
