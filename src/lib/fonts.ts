@@ -1,6 +1,5 @@
-import { readFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
 import type { SatoriOptions } from 'satori';
+import { spaceMonoRegularBase64, spaceMonoBoldBase64 } from './spaceMonoData.ts';
 
 type SatoriFont = SatoriOptions['fonts'][number];
 
@@ -11,12 +10,8 @@ type SatoriFont = SatoriOptions['fonts'][number];
  * their own fonts.
  */
 export async function defaultFonts(): Promise<SatoriFont[]> {
-  const [regular, bold] = await Promise.all([
-    readFile(fileURLToPath(new URL('../assets/fonts/SpaceMono-Regular.ttf', import.meta.url))),
-    readFile(fileURLToPath(new URL('../assets/fonts/SpaceMono-Bold.ttf', import.meta.url))),
-  ]);
   return [
-    { name: 'Space Mono', data: regular, weight: 400, style: 'normal' },
-    { name: 'Space Mono', data: bold, weight: 700, style: 'normal' },
+    { name: 'Space Mono', data: Buffer.from(spaceMonoRegularBase64, 'base64'), weight: 400, style: 'normal' },
+    { name: 'Space Mono', data: Buffer.from(spaceMonoBoldBase64, 'base64'), weight: 700, style: 'normal' },
   ];
 }
