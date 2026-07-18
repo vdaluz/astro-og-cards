@@ -1,6 +1,6 @@
 {
   "name": "@vdaluz/astro-og-cards",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Shared OG/social-card meta tags and build-time card generation (satori + sharp) for @vdaluz/*-family Astro sites.",
   "type": "module",
   "license": "MIT",
