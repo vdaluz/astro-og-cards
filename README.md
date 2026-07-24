@@ -1,5 +1,7 @@
 # @vdaluz/astro-og-cards
 
+[![CI](https://github.com/vdaluz/astro-og-cards/actions/workflows/ci.yml/badge.svg)](https://github.com/vdaluz/astro-og-cards/actions/workflows/ci.yml)
+
 Shared OG/social-card machinery for [vdaluz.com](https://vdaluz.com)-family Astro sites: a meta-tag emission component and a build-time card generation harness (satori + sharp). Ships raw `.astro`/`.ts` - the consuming app's Astro/Vite compiles them (no prebuild step), same as `@vdaluz/astro-blog`.
 
 ## Install

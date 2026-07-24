@@ -8,6 +8,7 @@
     "src"
   ],
   "scripts": {
+    "check": "astro check",
     "test": "node --test"
   },
   "exports": {
@@ -21,5 +22,11 @@
     "satori": "^0.28.0",
     "satori-html": "^0.3.2",
     "sharp": "^0.35.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@types/node": "^26.1.1",
+    "astro": "^7.1.3",
+    "typescript": "^6.0.3"
   }
 }
