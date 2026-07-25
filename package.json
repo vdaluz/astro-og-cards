@@ -1,9 +1,26 @@
 {
   "name": "@vdaluz/astro-og-cards",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build-time OG/social-card generation (satori + sharp) and meta-tag emission for Astro - proven in production on vdaluz.com and imperfectsystems.com.",
-  "type": "module",
+  "keywords": [
+    "astro",
+    "astro-component",
+    "og-image",
+    "social-card",
+    "satori",
+    "open-graph"
+  ],
+  "homepage": "https://github.com/vdaluz/astro-og-cards#readme",
+  "bugs": {
+    "url": "https://github.com/vdaluz/astro-og-cards/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vdaluz/astro-og-cards.git"
+  },
   "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
   "files": [
     "src"
   ],
