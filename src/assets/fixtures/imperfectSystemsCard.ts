@@ -20,7 +20,7 @@ export const imperfectSystemsCard = `
     <div style="display:flex;flex-direction:column;padding:44px 48px 52px;">
       <div style="color:#9ca3af;font-size:26px;line-height:1.9;letter-spacing:0.01em;">imperfect-systems ~ %</div>
       <div style="display:flex;font-size:34px;line-height:1.8;color:#00ff00;text-shadow:0 0 10px rgba(0,255,0,0.55), 0 0 24px rgba(0,255,0,0.3);letter-spacing:0.005em;">
-        <span style="color:#80ff80;margin-right:14px;">$</span>./run <span style="color:#80ff80;">--software --games --music</span>
+        <span style="color:#80ff80;margin-right:14px;">$</span><span style="margin-right:14px;">./run</span><span style="color:#80ff80;">--software --games --music</span>
       </div>
       <div style="display:flex;margin-top:40px;justify-content:space-between;align-items:baseline;">
         <div style="display:flex;font-size:28px;font-weight:700;color:#ededed;letter-spacing:0.04em;">
