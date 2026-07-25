@@ -37,6 +37,6 @@ Same tag-pinned-tarball process shared by all `@vdaluz/*` component libraries - 
 
 ## Consumers
 
-- [imperfectsystems.com](https://imperfectsystems.com) - pinned to v1.0.0 (IPS-297), generating the default card, Deep Cut Atlas card (en/es/pt), and per-post blog cards via `scripts/generate-og-images.mjs` as a `prebuild` hook.
+- [imperfectsystems.com](https://imperfectsystems.com) - pinned to v1.0.0 (IPS-297), generating the default card, Deep Cut Atlas card (en/es/pt), per-post blog cards, and Open Source section cards (index + one per package, IPS-408) via `scripts/generate-og-images.mjs` as a `prebuild` hook.
 
 Other sister sites planned as they adopt static/dynamic OG cards per VDA-902's standardization rule.
