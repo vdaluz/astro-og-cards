@@ -4,6 +4,12 @@ All notable changes to this project are documented here. Format loosely follows 
 
 ## [Unreleased]
 
+## [1.0.3] - 2026-07-25
+
+### Fixed
+
+- `defaultFonts()` no longer re-decodes the bundled Space Mono base64 data on every call - the decoded buffers are now memoized at module scope, so generating many cards in one build only pays the decode cost once.
+
 ## [1.0.2] - 2026-07-25
 
 ### Added
