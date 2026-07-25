@@ -17,7 +17,7 @@ export interface GenerateCardOptions {
  *
  * sharp, not @resvg/resvg-js, does the SVG->PNG step: resvg-js 2.6.2 native-panics
  * on satori's feDropShadow/feGaussianBlur filter output (any box-shadow/text-shadow),
- * confirmed against a real shadow-bearing card design during VDA-902's toolchain spike.
+ * confirmed against a real shadow-bearing card design (see README's Known gotchas).
  */
 export async function generateCard(
   markup: string,

@@ -86,12 +86,13 @@ Real output from `generateCard(imperfectSystemsCard)`, the fixture above, unmodi
 
 Bundles a default static (non-variable) font, [Space Mono](https://github.com/googlefonts/spacemono) (OFL-licensed). Pass `fonts` in the options to override.
 
-### Known gotchas (found during VDA-902's toolchain spike)
+### Known gotchas
 
 - **Use `sharp` for SVG->PNG, not `@resvg/resvg-js`.** resvg-js 2.6.2 (latest stable as of writing) native-panics (uncatchable Rust abort, not a JS exception) on Satori's `feDropShadow`/`feGaussianBlur` filter output - i.e. any `box-shadow` or `text-shadow` in the source markup. Confirmed via binary search against a real shadow-bearing design; independent of shadow color format (hex vs `rgba()`).
 - **Variable fonts fail to parse.** Satori's bundled font parser (`@shuding/opentype.js`) can't read variable-font files (e.g. macOS's system SF Mono, which has an `fvar` table). Always pass a static font weight, never a system font reference.
 - **The bundled default font is embedded as base64 in `src/lib/spaceMonoData.ts`, not read from a sibling `.ttf` file at runtime.** Confirmed via a real `astro build`: Vite/Rollup bundles this package's source into a new chunk file at a different physical location in the consumer's build output, so any `import.meta.url`-relative disk read breaks there (regardless of whether it's written as `new URL(...)` or a plain `path.join` - both are equally broken, since the problem is the module's *code* being relocated, not a specific path-construction pattern Vite's static analyzer happens to intercept). The raw `.ttf` files still live in `src/assets/fonts/` for provenance/license visibility and to regenerate the base64 if the font is ever updated; they aren't imported by any code path.
 - `satori-html` is stale (last published Dec 2022) but works correctly against the current Satori API as of this writing - the smoke test (`npm test`) is the tripwire for a future break.
+- **`satori-html` unconditionally trims every text node's value**, so a literal space in a text node right before an inline-styled `<span>` is silently dropped (and a non-breaking space doesn't survive either - JS `trim()` treats it as whitespace too). Give the following span an explicit `margin-left` (or the preceding element a `margin-right`) instead of relying on a whitespace character between elements.
 
 ## Contributing
 

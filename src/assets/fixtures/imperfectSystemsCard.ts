@@ -5,7 +5,7 @@
  * original class-based design. Used as the smoke-test fixture because it's the
  * realistic worst case: nested flex, gradients, border-radius, and - critically -
  * both box-shadow and text-shadow, which is what caught the resvg-js crash during
- * VDA-902's toolchain spike.
+ * this package's toolchain spike (see README's Known gotchas).
  */
 export const imperfectSystemsCard = `
 <div style="width:1200px;height:630px;display:flex;align-items:center;justify-content:center;background:#0a0a0a;font-family:'Space Mono';position:relative;">
