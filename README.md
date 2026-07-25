@@ -25,6 +25,14 @@ Pinned https tarball from a tag (no registry needed):
 
 Peer dependency: `astro` >= 6.
 
+> **Installing this pulls in native `sharp`.** `satori`, `satori-html`, and `sharp` are regular
+> `dependencies`, not optional ones, so every consumer installs all three even if it only uses
+> `OgMeta` (pure meta tags, no image generation). That's an intentional tradeoff, not an
+> oversight: card generation is this package's actual point, and splitting `OgMeta` into its own
+> zero-dependency package for the rare meta-tags-only consumer isn't worth the maintenance
+> overhead of a second package for one component. If that changes, revisit an optional
+> peerDependency split.
+
 ## Meta tags
 
 ```astro
@@ -41,7 +49,22 @@ import OgMeta from '@vdaluz/astro-og-cards/OgMeta.astro';
 />
 ```
 
-Emits the full `og:*`/`twitter:*` tag set (title, description, image at 1200x630, url, type, site name, twitter card).
+Emits the full `og:*`/`twitter:*` tag set (title, description, image, url, type, site name, twitter card, including `twitter:image:alt`). `imageWidth`/`imageHeight` default to 1200/630 (matching `generateCard`'s defaults) but are optional props if your image is a different size.
+
+For a blog post, pass `type="article"` plus `publishedTime`/`modifiedTime` (ISO 8601) to emit `article:published_time`/`article:modified_time`:
+
+```astro
+<OgMeta
+  title={post.title}
+  description={post.description}
+  image={ogImageUrl}
+  url={postUrl}
+  siteName="Example Site"
+  type="article"
+  publishedTime={post.pubDate.toISOString()}
+  modifiedTime={post.updatedDate?.toISOString()}
+/>
+```
 
 ## Card generation
 

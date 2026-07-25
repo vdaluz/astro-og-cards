@@ -4,6 +4,14 @@ All notable changes to this project are documented here. Format loosely follows 
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-07-25
+
+### Added
+
+- `OgMeta` gained `imageWidth`/`imageHeight` props (default 1200/630, matching `generateCard`), `twitter:image:alt` (previously only `og:image:alt`), and `publishedTime`/`modifiedTime` props emitting `article:published_time`/`article:modified_time` when `type="article"`.
+- Broader `generateCard` test coverage: custom width/height is verified via real PNG dimensions (sharp metadata, not just "did it render"), and the `fonts` option is verified to actually override the bundled default rather than being silently ignored.
+- README note documenting the sharp/satori dependency cost as an intentional tradeoff, not an oversight.
+
 ## [1.0.3] - 2026-07-25
 
 ### Fixed
