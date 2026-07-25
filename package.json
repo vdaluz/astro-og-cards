@@ -1,6 +1,6 @@
 {
   "name": "@vdaluz/astro-og-cards",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Build-time OG/social-card generation (satori + sharp) and meta-tag emission for Astro - proven in production on vdaluz.com and imperfectsystems.com.",
   "keywords": [
     "astro",

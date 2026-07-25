@@ -4,6 +4,14 @@ All notable changes to this project are documented here. Format loosely follows 
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-07-25
+
+### Fixed
+
+- `imperfectSystemsCard` fixture rendered `./run--software` instead of `./run --software`: `satori-html` unconditionally trims every text node's value, so a literal space in a text node right before an inline-styled `<span>` was silently dropped. Fixed by giving the element an explicit `margin-right` instead of relying on a whitespace character, matching the pattern already used elsewhere on the same line. Regenerated `docs/og-card-example.png`.
+- Removed an internal ticket-tracker reference that had leaked into the published README and three source-file doc comments.
+- `publish.yml`: removed `setup-node`'s `registry-url` input, which wrote an empty `_authToken` line to `.npmrc` that caused npm to skip the OIDC trusted-publishing exchange entirely.
+
 ## [1.1.0] - 2026-07-25
 
 ### Added
