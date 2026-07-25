@@ -6,12 +6,16 @@ Social shares need an OG image, and generating one at build time from real post 
 
 ## Install
 
-Pinned https tarball from a tag (no registry needed):
+```
+npm install @vdaluz/astro-og-cards
+```
+
+Alternatively, a pinned https tarball from a tag works too, with no registry involved:
 
 ```jsonc
 // package.json
 "dependencies": {
-  "@vdaluz/astro-og-cards": "https://github.com/vdaluz/astro-og-cards/archive/refs/tags/v1.0.0.tar.gz"
+  "@vdaluz/astro-og-cards": "https://github.com/vdaluz/astro-og-cards/archive/refs/tags/v1.1.0.tar.gz"
 }
 ```
 
@@ -19,9 +23,7 @@ Pinned https tarball from a tag (no registry needed):
 > shorthand (and even an explicit `git+https://` URL) to `git+ssh://` in the lockfile.
 > CI runners (e.g. Cloudflare Pages/Workers) have no SSH key, so `npm ci` would fail to
 > clone it. The `/archive/refs/tags/<tag>.tar.gz` URL is anonymous https with an integrity
-> hash in the lockfile - it just works in CI. Bump the tag in the URL to upgrade. This is the
-> only supported install path; there's no npm registry package (tag-tarball works for anyone,
-> no registry auth needed).
+> hash in the lockfile - it just works in CI. Bump the tag in the URL to upgrade.
 
 Peer dependency: `astro` >= 6.
 
