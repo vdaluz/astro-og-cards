@@ -29,6 +29,7 @@ Single-maintainer, worked sequentially - no worktrees, work directly on `main` p
 - **Pin `sharp` to `^0.35.0` or later**, not `^0.34.x` - `sharp@0.34.5`'s install check fails against Node 25 and falls back to a from-source build that then fails (missing `node-addon-api`). `0.35.3` installs its prebuilt binary correctly on the same machine/Node version.
 - **Bundled font must be static, not variable** - Satori's font parser can't read variable-font files (e.g. macOS's system SF Mono).
 - **Never read a bundled binary asset from a sibling file via `import.meta.url` at runtime** - confirmed via a real `astro build` that Vite/Rollup bundles this package's source into a relocated chunk file, breaking any path computed relative to the module's own location. Fonts are embedded as base64 in `src/lib/spaceMonoData.ts` instead. This applies to any future bundled asset this package might add, not just fonts.
+- **A trailing space in a text node right before an inline-styled `<span>` inside a `display:flex` container gets silently collapsed by satori-html.** Confirmed twice: `defaultCard.ts` already ships this way in production ("./run--software", "ImperfectSystems" - both missing the source space, tracked as IPS-438), and it recurred while building consuming-site markup that reused the same pattern. Fix by giving the following span an explicit `margin-left` (or the preceding element a `margin-right`) instead of relying on a literal space character.
 
 ## Release process
 
