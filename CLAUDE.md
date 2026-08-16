@@ -15,7 +15,7 @@ npm test   # node --test - runs the generateCard smoke test against a real shado
 
 ## Workflow
 
-Single-maintainer, worked sequentially - no worktrees, work directly on `main` per the standing rule for the sibling `@vdaluz/*` packages (astro-blog, astro-affiliate, astro-opt-in-analytics all follow this). Consumers only ever see tagged releases, so `main` is safe to iterate on.
+Shared preamble: `.claude/rules/git-workflow-direct-to-main.md`.
 
 ## Conventions
 
