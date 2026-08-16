@@ -19,9 +19,10 @@ Single-maintainer, worked sequentially - no worktrees, work directly on `main` p
 
 ## Conventions
 
-- **Raw source, no build step.** Ships `.ts`/`.astro` from `src/`; consuming apps' Astro/Vite compiles them. Never add a build/dist step or `main` field.
+Shared `@vdaluz/astro-*` conventions (raw source/no build step, per-path exports):
+`.claude/rules/astro-package-conventions.md`.
+
 - **Explicit `.ts` extensions on relative imports** (matches astro-affiliate) - required for `node --test` to resolve them directly without a bundler.
-- **Per-path exports.** New public files need an `exports` entry in `package.json`.
 
 ## Toolchain gotchas (see also README)
 
