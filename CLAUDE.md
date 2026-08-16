@@ -33,11 +33,14 @@ Single-maintainer, worked sequentially - no worktrees, work directly on `main` p
 
 ## Release process
 
-Same tag-pinned-tarball process shared by all `@vdaluz/*` component libraries - see root
-`~/Repos/CLAUDE.md` -> "Astro shared-library release process".
+Same tag-then-npm-publish process shared by all `@vdaluz/*` component libraries, consumed via
+npm-registry semver pins (not tarball URLs, since META-90) - see root `~/Repos/CLAUDE.md` ->
+"Astro shared-library release process".
 
 ## Consumers
 
-- [imperfectsystems.com](https://imperfectsystems.com) - pinned to v1.0.0, generating the default card, Deep Cut Atlas card (en/es/pt), per-post blog cards, and Open Source section cards (index + one per package) via `scripts/generate-og-images.mjs` as a `prebuild` hook.
+All five family sites now pin this package (npm-registry semver, most on 1.1.1 as of META-90):
 
-Other sister sites planned as they adopt static/dynamic OG cards.
+- [imperfectsystems.com](https://imperfectsystems.com) - generates the default card, Deep Cut Atlas card (en/es/pt), per-post blog cards, and Open Source section cards (index + one per package) via `scripts/generate-og-images.mjs` as a `prebuild` hook.
+- vdaluz.com, freetoolbox.net, wq1k.com - similar `prebuild`-hook card generation per site's own script.
+- vicstradamus.com - devDependency only (build-time card generation, not runtime).
