@@ -4,6 +4,20 @@ All notable changes to this project are documented here. Format loosely follows 
 
 ## [Unreleased]
 
+## [1.1.2] - 2026-08-22
+
+### Fixed
+
+- README had no Consumers section, unlike the other `@vdaluz/astro-*` packages, despite all five family sites depending on it.
+
+### Removed
+
+- Dropped the tarball-install alternative from the README - every consumer moved to npm-registry semver pins, and the tarball block's hardcoded version tag had drifted from the published version.
+
+### Documentation
+
+- Added npm version and license badges.
+
 ## [1.1.1] - 2026-07-25
 
 ### Fixed

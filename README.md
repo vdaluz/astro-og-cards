@@ -1,6 +1,8 @@
 # @vdaluz/astro-og-cards
 
+[![npm version](https://img.shields.io/npm/v/@vdaluz/astro-og-cards.svg)](https://www.npmjs.com/package/@vdaluz/astro-og-cards)
 [![CI](https://github.com/vdaluz/astro-og-cards/actions/workflows/ci.yml/badge.svg)](https://github.com/vdaluz/astro-og-cards/actions/workflows/ci.yml)
+[![license](https://img.shields.io/npm/l/@vdaluz/astro-og-cards.svg)](LICENSE)
 
 Social shares need an OG image, and generating one at build time from real post data (not a hand-designed static fallback) usually means wiring up a headless browser or a from-scratch Satori setup yourself. `@vdaluz/astro-og-cards` packages both halves: a meta-tag emission component for the `og:*`/`twitter:*` tags, and a build-time card generation harness (satori + sharp) that renders styled HTML to a real PNG. Ships raw `.astro`/`.ts` - the consuming app's Astro/Vite compiles them (no prebuild step), same as `@vdaluz/astro-blog`. Proven in production on [vdaluz.com](https://vdaluz.com) and [imperfectsystems.com](https://imperfectsystems.com).
 
@@ -9,21 +11,6 @@ Social shares need an OG image, and generating one at build time from real post 
 ```
 npm install @vdaluz/astro-og-cards
 ```
-
-Alternatively, a pinned https tarball from a tag works too, with no registry involved:
-
-```jsonc
-// package.json
-"dependencies": {
-  "@vdaluz/astro-og-cards": "https://github.com/vdaluz/astro-og-cards/archive/refs/tags/v1.1.0.tar.gz"
-}
-```
-
-> **Why a tarball, not `github:vdaluz/astro-og-cards#v1.0.0`?** npm canonicalizes GitHub
-> shorthand (and even an explicit `git+https://` URL) to `git+ssh://` in the lockfile.
-> CI runners (e.g. Cloudflare Pages/Workers) have no SSH key, so `npm ci` would fail to
-> clone it. The `/archive/refs/tags/<tag>.tar.gz` URL is anonymous https with an integrity
-> hash in the lockfile - it just works in CI. Bump the tag in the URL to upgrade.
 
 Peer dependency: `astro` >= 6.
 
@@ -97,6 +84,14 @@ Bundles a default static (non-variable) font, [Space Mono](https://github.com/go
 ## Contributing
 
 Issues welcome. PRs by discussion - open an issue first for anything beyond a typo or docs fix.
+
+## Consumers
+
+- [vdaluz.com](https://vdaluz.com)
+- [imperfectsystems.com](https://imperfectsystems.com)
+- [freetoolbox.net](https://freetoolbox.net)
+- [wq1k.com](https://wq1k.com)
+- [vicstradamus.com](https://vicstradamus.com) (devDependency, build-time card generation only)
 
 ## License
 
