@@ -38,7 +38,7 @@ concrete steps.
 
 ## Consumers
 
-All five family sites now pin this package (npm-registry semver, most on 1.1.1 as of META-90):
+All five family sites now pin this package (npm-registry semver, most on 1.1.1):
 
 - [imperfectsystems.com](https://imperfectsystems.com) - generates the default card, Deep Cut Atlas card (en/es/pt), per-post blog cards, and Open Source section cards (index + one per package) via `scripts/generate-og-images.mjs` as a `prebuild` hook.
 - vdaluz.com, freetoolbox.net, wq1k.com - similar `prebuild`-hook card generation per site's own script.
