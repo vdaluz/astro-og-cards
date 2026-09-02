@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import sharp from 'sharp';
 import { generateCard } from '../src/lib/generateCard.ts';
 import { defaultFonts } from '../src/lib/fonts.ts';
-import { imperfectSystemsCard } from '../src/assets/fixtures/imperfectSystemsCard.ts';
+import { imperfectSystemsCard } from '../fixtures/imperfectSystemsCard.ts';
 
 const PNG_MAGIC = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 

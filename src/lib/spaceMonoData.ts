@@ -1,4 +1,4 @@
-// Base64-encoded Space Mono (OFL-licensed, see ../assets/fonts/OFL.txt), embedded directly
+// Base64-encoded Space Mono (OFL-licensed, see ./OFL.txt), embedded directly
 // rather than read from a sibling file: Vite/Rollup bundles this module into a
 // different physical chunk location in the consumer's build output, so any
 // import.meta.url-relative disk read breaks regardless of how the path is

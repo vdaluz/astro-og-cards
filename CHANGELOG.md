@@ -4,6 +4,10 @@ All notable changes to this project are documented here. Format loosely follows 
 
 ## [Unreleased]
 
+### Removed
+
+- Dropped the two unused Space Mono `.ttf` files and the test-only `imperfectSystemsCard` fixture from the published npm tarball. The `.ttf`s were never read at runtime (the font ships as base64 in `src/lib/spaceMonoData.ts`) and still live in the repo's root-level `assets/fonts/` for provenance; the fixture moved to a root-level `fixtures/`. Unpacked size drops from 481.6 kB to 281.5 kB (12 files to 9). No runtime or API change.
+
 ## [1.1.2] - 2026-08-22
 
 ### Fixed
