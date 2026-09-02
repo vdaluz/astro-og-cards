@@ -19,10 +19,8 @@ Shared preamble: `.claude/rules/git-workflow-direct-to-main.md`.
 
 ## Conventions
 
-Shared `@vdaluz/astro-*` conventions (raw source/no build step, per-path exports):
+Shared `@vdaluz/astro-*` conventions (raw source/no build step, per-path exports, `.ts` extensions on relative imports):
 `.claude/rules/astro-package-conventions.md`.
-
-- **Explicit `.ts` extensions on relative imports** (matches astro-affiliate) - required for `node --test` to resolve them directly without a bundler.
 
 ## Toolchain gotchas (see also README)
 
