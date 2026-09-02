@@ -63,7 +63,7 @@ import { generateCard } from '@vdaluz/astro-og-cards';
 const png = await generateCard(inlineStyledHtml); // Buffer, 1200x630 PNG
 ```
 
-`markup` must use **inline styles, not `<style>` blocks or CSS classes** - `satori-html` (the HTML-to-Satori adapter) only reads inline styles. A hand-designed card with `<style>` + classes needs manual translation to inline styles first; see `src/assets/fixtures/imperfectSystemsCard.ts` for a worked example (imperfectsystems.com's real default card, translated).
+`markup` must use **inline styles, not `<style>` blocks or CSS classes** - `satori-html` (the HTML-to-Satori adapter) only reads inline styles. A hand-designed card with `<style>` + classes needs manual translation to inline styles first; see `fixtures/imperfectSystemsCard.ts` for a worked example (imperfectsystems.com's real default card, translated).
 
 ### Example
 
