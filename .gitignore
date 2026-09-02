@@ -1,3 +1,8 @@
-node_modules/
-.astro
+node_modules
+dist
 .DS_Store
+*.log
+*.tgz
+.astro
+.playwright-mcp/
+.claude/worktrees/
