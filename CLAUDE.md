@@ -1,7 +1,5 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code when working in this repository.
-
 ## What this repo is
 
 `@vdaluz/astro-og-cards`: shared OG/social-card meta-tag component and a build-time card generation harness (satori + sharp) for vdaluz.com-family Astro sites. Component library, not a standalone site - raw `.astro`/`.ts` from `src/`, no build step.
