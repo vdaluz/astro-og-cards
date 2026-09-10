@@ -1,4 +1,6 @@
 ---
+import { assertAbsoluteUrl } from '../lib/assert-absolute-url.ts';
+
 export interface Props {
   title: string;
   description: string;
@@ -32,6 +34,9 @@ const {
   publishedTime,
   modifiedTime,
 } = Astro.props;
+
+assertAbsoluteUrl(image, 'image');
+assertAbsoluteUrl(url, 'url');
 ---
 
 <meta property="og:type" content={type} />

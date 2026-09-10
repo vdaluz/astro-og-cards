@@ -4,6 +4,10 @@ All notable changes to this project are documented here. Format loosely follows 
 
 ## [Unreleased]
 
+### Changed
+
+- `OgMeta` now throws at build time if `image` or `url` is not an absolute `http(s)://` URL, instead of silently emitting it - Open Graph scrapers don't fetch relative or protocol-relative values, so a mistake here previously produced a card with no image and no error anywhere in the build.
+
 ## [1.1.3] - 2026-09-04
 
 ### Removed

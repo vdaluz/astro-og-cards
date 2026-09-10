@@ -40,6 +40,8 @@ import OgMeta from '@vdaluz/astro-og-cards/OgMeta.astro';
 
 Emits the full `og:*`/`twitter:*` tag set (title, description, image, url, type, site name, twitter card, including `twitter:image:alt`). `imageWidth`/`imageHeight` default to 1200/630 (matching `generateCard`'s defaults) but are optional props if your image is a different size.
 
+`image` and `url` must be absolute `http(s)://` URLs - Open Graph scrapers don't fetch relative or protocol-relative values, so resolve them against your site's origin (`new URL(image, Astro.site)`) before passing them in. `OgMeta` throws at build time if either isn't absolute, rather than silently shipping a card with a missing image.
+
 For a blog post, pass `type="article"` plus `publishedTime`/`modifiedTime` (ISO 8601) to emit `article:published_time`/`article:modified_time`:
 
 ```astro
