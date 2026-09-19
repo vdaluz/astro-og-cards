@@ -108,6 +108,7 @@ Publishing / OIDC, no token secret):
 - [freetoolbox.net](https://freetoolbox.net)
 - [wq1k.com](https://wq1k.com)
 - [vicstradamus.com](https://vicstradamus.com) (devDependency, build-time card generation only)
+- [deepcutatlas.com](https://deepcutatlas.com)
 
 ## License
 
