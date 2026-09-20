@@ -8,7 +8,7 @@
 
 ```bash
 npm install
-npm test   # node --test - runs the generateCard smoke test against a real shadow-bearing card fixture
+npm test   # node --test on test/*.test.ts (lib tests, incl. the generateCard shadow-card smoke test), then vitest on test/*.vitest.ts (OgMeta.astro via Astro's Container API)
 ```
 
 ## Workflow
