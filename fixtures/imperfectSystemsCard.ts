@@ -1,9 +1,10 @@
 /**
- * Inlined equivalent of imperfectsystems.com's real og-default.html
- * (src/assets/og/og-default.html in that repo) - satori-html requires inline
- * styles, not <style> blocks/classes, so this is hand-translated from the
- * original class-based design. Used as the smoke-test fixture because it's the
- * realistic worst case: nested flex, gradients, border-radius, and - critically -
+ * Inlined equivalent of imperfectsystems.com's original og-default.html card
+ * (since retired; its current inline-styled form lives in src/lib/og/defaultCard.ts
+ * in that repo) - satori-html requires inline styles, not <style> blocks/classes,
+ * so this is hand-translated from the original class-based design. Used as the
+ * smoke-test fixture because it's the realistic worst case: nested flex,
+ * gradients, border-radius, and - critically -
  * both box-shadow and text-shadow, which is what caught the resvg-js crash during
  * this package's toolchain spike (see README's Known gotchas).
  */

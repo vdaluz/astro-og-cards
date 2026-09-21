@@ -123,6 +123,7 @@ Publishing / OIDC, no token secret):
 - [wq1k.com](https://wq1k.com)
 - [vicstradamus.com](https://vicstradamus.com) (devDependency, build-time card generation only)
 - [deepcutatlas.com](https://deepcutatlas.com)
+- [roomforstars.com](https://roomforstars.com) (`OgMeta` component only)
 
 ## License
 
