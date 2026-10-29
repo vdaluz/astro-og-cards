@@ -4,6 +4,21 @@ All notable changes to this project are documented here. Format loosely follows 
 
 ## [Unreleased]
 
+## [1.1.5] - 2026-10-28
+
+### Security
+
+- `satori` moves from `^0.28.0` to `~0.41.0`, fixing GHSA-wx4j-mvgx-mqwp (Satori-generated SVG has improper escaping, fixed in 0.33.5).
+
+### Changed
+
+- Text measures slightly narrower under satori 0.41, so some long titles wrap onto fewer lines. Regenerated cards differ by a median of about 2% of pixels; layout and colors are otherwise unchanged. Committed cards only change when a consumer regenerates them.
+
+### Notes
+
+- The pin stops below satori 0.42.0 on purpose. From 0.42.0, satori sizes boxes as CSS `content-box`, so a card root with a fixed width plus padding (for example `width:1200px;padding:76px`) overflows and clips on the right. Moving past it needs `box-sizing:border-box` on those elements in each consumer's card template.
+- satori pins `fflate` to exactly 0.7.3, which carries a moderate advisory in `unzipSync`. satori only calls `inflateSync`, so it is not reachable, but consumers can clear the alert with an npm override: `"overrides": { "satori": { "fflate": "^0.7.5" } }`.
+
 ## [1.1.4] - 2026-09-10
 
 ### Changed

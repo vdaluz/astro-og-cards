@@ -1,6 +1,6 @@
 {
   "name": "@vdaluz/astro-og-cards",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Build-time OG/social-card generation (satori + sharp) and meta-tag emission for Astro - proven in production on vdaluz.com and imperfectsystems.com.",
   "keywords": [
     "astro",
@@ -39,7 +39,7 @@
     "astro": ">=6.0.0"
   },
   "dependencies": {
-    "satori": "^0.63.2",
+    "satori": "~0.41.0",
     "satori-html": "^0.3.2",
     "sharp": "^0.35.0"
   },
@@ -49,5 +49,10 @@
     "astro": "^7.3.2",
     "typescript": "^6.0.3",
     "vitest": "^5.0.1"
+  },
+  "overrides": {
+    "satori": {
+      "fflate": "^0.7.5"
+    }
   }
 }

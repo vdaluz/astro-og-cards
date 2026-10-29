@@ -28,6 +28,11 @@ updates:
       - dependency-name: 'typescript'
         update-types:
           - 'version-update:semver-major'
+      # satori 0.42.0 switched to CSS content-box sizing: consumer cards that set a fixed
+      # width plus padding overflow and clip on the right. Stay on 0.41.x (AST-121)
+      # until every consumer template adds box-sizing:border-box.
+      - dependency-name: 'satori'
+        versions: ['>=0.42.0']
 
   - package-ecosystem: github-actions
     directory: '/'
