@@ -4,6 +4,18 @@ All notable changes to this project are documented here. Format loosely follows 
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-11-01
+
+### Changed
+
+- `satori` moves from `~0.41.0` to `^0.63.2`.
+- satori 0.42.0 switched to the CSS initial values for `box-sizing` (`content-box`) and `position` (`static`). Under those, a card root with a fixed width plus padding overflows and clips on the right, and an absolutely positioned overlay paints over static content after it. `generateCard` now gives every element `box-sizing: border-box` and `position: relative` unless the markup sets its own, so existing card templates render as they did on 0.41 with no changes. Set either property explicitly to opt out on one element.
+
+### Notes
+
+- satori 0.42.0 also stopped drawing a border that has no style. Give every border an explicit style (`1px solid #ccc`, not `1px #ccc`).
+- The `"overrides": { "satori": { "fflate": "^0.7.5" } }` advice from 1.1.5 still applies: satori 0.63.2 still pins `fflate` 0.7.3.
+
 ## [1.1.5] - 2026-10-28
 
 ### Security

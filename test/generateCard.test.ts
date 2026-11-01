@@ -39,3 +39,28 @@ test('generateCard uses the fonts option instead of the bundled default when pro
 test('generateCard throws when fonts is explicitly emptied out, proving the option overrides the default rather than falling back to it', async () => {
   await assert.rejects(() => generateCard(imperfectSystemsCard, { fonts: [] }));
 });
+
+async function pixelAt(png: Buffer, x: number, y: number): Promise<[number, number, number]> {
+  const { data, info } = await sharp(png).raw().toBuffer({ resolveWithObject: true });
+  const i = (y * info.width + x) * info.channels;
+  return [data[i], data[i + 1], data[i + 2]];
+}
+
+test('generateCard keeps a padded fixed-width box inside its width (border-box default)', async () => {
+  const markup = `<div style="display:flex;width:1200px;height:630px;padding:76px;background:#ffffff;"><div style="display:flex;width:100%;height:100%;background:#ff0000;"></div></div>`;
+  const png = await generateCard(markup);
+  assert.deepEqual(await pixelAt(png, 1190, 315), [255, 255, 255]);
+  assert.deepEqual(await pixelAt(png, 600, 315), [255, 0, 0]);
+});
+
+test('generateCard lets a template opt back into content-box', async () => {
+  const markup = `<div style="display:flex;width:1200px;height:630px;padding:76px;background:#ffffff;box-sizing:content-box;"><div style="display:flex;width:100%;height:100%;background:#ff0000;"></div></div>`;
+  const png = await generateCard(markup);
+  assert.deepEqual(await pixelAt(png, 1190, 315), [255, 0, 0]);
+});
+
+test('generateCard paints a later static sibling over an earlier absolute overlay (relative default)', async () => {
+  const markup = `<div style="display:flex;width:1200px;height:630px;background:#ffffff;"><div style="position:absolute;top:0;left:0;width:1200px;height:630px;background:#ff0000;"></div><div style="display:flex;width:1200px;height:630px;background:#00ff00;"></div></div>`;
+  const png = await generateCard(markup);
+  assert.deepEqual(await pixelAt(png, 600, 315), [0, 255, 0]);
+});
