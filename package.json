@@ -1,6 +1,6 @@
 {
   "name": "@vdaluz/astro-og-cards",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Build-time OG/social-card generation (satori + sharp) and meta-tag emission for Astro - proven in production on vdaluz.com and imperfectsystems.com.",
   "keywords": [
     "astro",
@@ -8,7 +8,9 @@
     "og-image",
     "social-card",
     "satori",
-    "open-graph"
+    "open-graph",
+    "seo",
+    "images"
   ],
   "homepage": "https://github.com/vdaluz/astro-og-cards#readme",
   "bugs": {
